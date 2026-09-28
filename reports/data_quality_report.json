@@ -1,0 +1,38 @@
+{
+  "report_generated_at": "2026-09-28T05:37:27.813632+00:00",
+  "datasets": {
+    "customers": {
+      "rows": 20000,
+      "columns": 7,
+      "duplicate_rows": 0,
+      "missing_values": {},
+      "validation_errors": [],
+      "status": "PASS"
+    },
+    "products": {
+      "rows": 1197,
+      "columns": 6,
+      "duplicate_rows": 0,
+      "missing_values": {},
+      "validation_errors": [],
+      "status": "PASS"
+    },
+    "orders": {
+      "rows": 33580,
+      "columns": 10,
+      "duplicate_rows": 0,
+      "missing_values": {},
+      "validation_errors": [],
+      "status": "PASS"
+    },
+    "order_items": {
+      "rows": 59163,
+      "columns": 5,
+      "duplicate_rows": 73,
+      "missing_values": {},
+      "validation_errors": [],
+      "status": "WARN"
+    }
+  },
+  "overall_status": "WARN"
+}

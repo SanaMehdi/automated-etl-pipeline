@@ -1,0 +1,33 @@
+services:
+  airflow:
+    image: airflow-airflow:latest
+    container_name: etl_airflow
+    user: "0:0"
+    restart: unless-stopped
+
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/data/airflow.db
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - airflow_data:/opt/airflow/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    ports:
+      - "8080:8080"
+
+    command: standalone
+
+    networks:
+      - etl_network
+
+volumes:
+  airflow_data:
+
+networks:
+  etl_network:
+    external: true
+    name: automated-etl-pipeline_default
